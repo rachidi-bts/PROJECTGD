@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -30,7 +31,7 @@ public class Demmandeur {
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
 	private Date anneeInscription;
 	@ManyToOne
-	private Filiere filiere;
+	private TypeFiliere typeFiliere;
 	private String login;
 	private String password;
 	
@@ -93,11 +94,11 @@ public class Demmandeur {
 		this.anneeInscription = anneeInscription;
 	}
 
-	public Filiere getFiliere() {
-		return filiere;
+	public TypeFiliere getTypeFiliere() {
+		return typeFiliere;
 	}
-	public void setFiliere(Filiere filiere) {
-		this.filiere = filiere;
+	public void setTypeFiliere(TypeFiliere typeFiliere) {
+		this.typeFiliere = typeFiliere;
 	}
 	public String getLogin() {
 		return login;
@@ -112,10 +113,8 @@ public class Demmandeur {
 		this.password = password;
 	}
     	
-	
-	
 	public Demmandeur(Long id, String cne, String codeApogee, String nom, String prenom, String cin, Date dateNaissance,
-			String villeNaissance, Date anneeInscription, Filiere filiere, String login, String password) {
+			String villeNaissance, Date anneeInscription, TypeFiliere typeFiliere, String login, String password) {
 		super();
 		this.id = id;
 		this.cne = cne;
@@ -126,7 +125,7 @@ public class Demmandeur {
 		this.dateNaissance = dateNaissance;
 		this.villeNaissance = villeNaissance;
 		this.anneeInscription = anneeInscription;
-		this.filiere = filiere;
+		this.typeFiliere = typeFiliere;
 		this.login = login;
 		this.password = password;
 	}
@@ -141,8 +140,8 @@ public class Demmandeur {
 	public String toString() {
 		return "Demmandeur [id=" + id + ", cne=" + cne + ", codeApogee=" + codeApogee + ", nom=" + nom + ", prenom="
 				+ prenom + ", cin=" + cin + ", dateNaissance=" + dateNaissance + ", villeNaissance=" + villeNaissance
-				+ ", anneeInscription=" + anneeInscription + ", filiere=" + filiere + ", login=" + login + ", password="
-				+ password + "]";
+				+ ", anneeInscription=" + anneeInscription + ", typeFiliere=" + typeFiliere + ", login=" + login
+				+ ", password=" + password + "]";
 	}
 	@Override
 	public int hashCode() {

@@ -6,15 +6,16 @@ import org.springframework.stereotype.Repository;
 
 import com.gestion.demo.bean.Demmandeur;
 import com.gestion.demo.bean.Filiere;
+import com.gestion.demo.bean.TypeFiliere;
 
 
 @Repository
  public interface DemmandeurDao extends JpaRepository<Demmandeur,Long> {
 
 
-	 public Demmandeur findByFiliere(Filiere filiere);
+	 public Demmandeur findByTypeFiliere(TypeFiliere typeFiliere);
 
-	 public int deleteByFiliere(Filiere filiere);
+	 public int deleteByTypeFiliere(TypeFiliere typeFiliere);
 	 
 	 public Demmandeur findByCne(String cne);
 		
@@ -24,7 +25,7 @@ import com.gestion.demo.bean.Filiere;
 		
 	 public Demmandeur findByCin(String cin);
 	 
-	 public List<Demmandeur> findByFiliereLibelle(String libelle);
+	 public List<Demmandeur> findByTypeFiliereLibelle(String libelle);
 
 	 public int deleteByCne(String cne);			
 

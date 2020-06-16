@@ -18,6 +18,8 @@ public class DemmandeDocument {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	private String anneeDocument;
+	private String semestreDoc;
 	@ManyToOne
 	private Demmandeur demmandeur;
 	@ManyToOne
@@ -38,6 +40,18 @@ public class DemmandeDocument {
 		this.id = id;
 	}
 	
+	public String getAnneeDocument() {
+		return anneeDocument;
+	}
+	public void setAnneeDocument(String anneeDocument) {
+		this.anneeDocument = anneeDocument;
+	}
+	public String getSemestreDoc() {
+		return semestreDoc;
+	}
+	public void setSemestreDoc(String semestreDoc) {
+		this.semestreDoc = semestreDoc;
+	}
 	public Demmandeur getDemmandeur() {
 		return demmandeur;
 	}
@@ -77,16 +91,18 @@ public class DemmandeDocument {
 		// TODO Auto-generated constructor stub
 	}
 	
-		public DemmandeDocument(Long id, Demmandeur demmandeur, TypeDocument typeDocument, Date dateDemmande,
-			EtatDemmande etatDemmande, Date dateValidation) {
-		super();
-		this.id = id;
-		this.demmandeur = demmandeur;
-		this.typeDocument = typeDocument;
-		this.dateDemmande = dateDemmande;
-		this.etatDemmande = etatDemmande;
-		this.dateValidation = dateValidation;
-	}
+		public DemmandeDocument(Long id, String anneeDocument, String semestreDoc, Demmandeur demmandeur,
+				TypeDocument typeDocument, Date dateDemmande, EtatDemmande etatDemmande, Date dateValidation) {
+			super();
+			this.id = id;
+			this.anneeDocument = anneeDocument;
+			this.semestreDoc = semestreDoc;
+			this.demmandeur = demmandeur;
+			this.typeDocument = typeDocument;
+			this.dateDemmande = dateDemmande;
+			this.etatDemmande = etatDemmande;
+			this.dateValidation = dateValidation;
+		}
 		@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -109,9 +125,9 @@ public class DemmandeDocument {
 	}
 	@Override
 	public String toString() {
-		return "DemmandeDocument [id=" + id + ", demmandeur=" + demmandeur + ", typeDocument=" + typeDocument
-				+ ", dateDemmande=" + dateDemmande + ", etatDemmande=" + etatDemmande + ", dateValidation="
-				+ dateValidation + "]";
+		return "DemmandeDocument [id=" + id + ", anneeDocument=" + anneeDocument + ", semestreDoc=" + semestreDoc
+				+ ", demmandeur=" + demmandeur + ", typeDocument=" + typeDocument + ", dateDemmande=" + dateDemmande
+				+ ", etatDemmande=" + etatDemmande + ", dateValidation=" + dateValidation + "]";
 	}
 	
 	

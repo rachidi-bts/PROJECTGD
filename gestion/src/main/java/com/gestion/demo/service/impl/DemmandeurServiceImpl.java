@@ -60,8 +60,8 @@ public class DemmandeurServiceImpl implements DemmandeurService {
 	}
 
 	@Override
-	public List<Demmandeur> findByFiliereLibelle(String libelle) {
-		return demmandeurDao.findByFiliereLibelle(libelle);
+	public List<Demmandeur> findByTypeFiliereLibelle(String libelle) {
+		return demmandeurDao.findByTypeFiliereLibelle(libelle);
 	}
 
 

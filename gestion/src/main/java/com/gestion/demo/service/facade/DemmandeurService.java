@@ -19,7 +19,7 @@ public interface DemmandeurService {
 
 	public Demmandeur findByCin(String cin);
 
-	public List<Demmandeur> findByFiliereLibelle(String libelle);
+	public List<Demmandeur> findByTypeFiliereLibelle(String libelle);
 
 	public int deleteByCne(String cne);
 
